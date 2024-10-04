@@ -72,7 +72,7 @@ int main() {
       Matrix label_batch = dataset.train_labels.block(0, start_idx, 1,
                                     std::min(batch_size, n_train - start_idx));
       Matrix target_batch = one_hot_encode(label_batch, 10);
-      if (false && ith_batch % 10 == 1) {
+      if ( ith_batch % 10 == 1) {
         std::cout << ith_batch << "-th grad: " << std::endl;
         dnn.check_gradient(x_batch, target_batch, 10);
       }
